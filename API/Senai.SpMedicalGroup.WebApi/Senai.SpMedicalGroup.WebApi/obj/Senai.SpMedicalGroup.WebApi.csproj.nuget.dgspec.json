@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Api_spmedicalgroup\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj": {}
+    "C:\\Users\\User\\Desktop\\SP_Medical_Group\\API\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Api_spmedicalgroup\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj": {
+    "C:\\Users\\User\\Desktop\\SP_Medical_Group\\API\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Api_spmedicalgroup\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\SP_Medical_Group\\API\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj",
         "projectName": "Senai.SpMedicalGroup.WebApi",
-        "projectPath": "C:\\Users\\User\\Desktop\\Api_spmedicalgroup\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\SP_Medical_Group\\API\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Api_spmedicalgroup\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\SP_Medical_Group\\API\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedicalGroup.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
