@@ -1,14 +1,12 @@
-  
 CREATE DATABASE SPMedicalGroup;
 GO
-
 
 USE SPMedicalGroup;
 GO
 
 CREATE TABLE Endereco(
 	IdEndereco INT PRIMARY KEY IDENTITY,
-	Rua VARCHAR(130) NOT NULL,
+	Rua VARCHAR(120) NOT NULL,
 	Numero INT NOT NULL,
 	Bairro VARCHAR(30) NOT NULL,
 	Cidade VARCHAR(40) NOT NULL,
@@ -21,19 +19,21 @@ GO
 CREATE TABLE Clinica(
 	IdClinica INT PRIMARY KEY IDENTITY,
 	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco),
-	NomeFantasia VARCHAR(30) UNIQUE NOT NULL,
+	NomeFantasia VARCHAR(25) UNIQUE NOT NULL,
 	CNPJ CHAR(14) UNIQUE NOT NULL,
-	RazaoSocial VARCHAR(55) UNIQUE NOT NULL,
+	RazaoSocial VARCHAR(50) UNIQUE NOT NULL,
 	HorarioAbertura TIME NOT NULL,
 	HorarioFechamento TIME NOT NULL
 );
 GO
 
+
 CREATE TABLE TipoUsuario(
 	IdTipoUsuario INT PRIMARY KEY IDENTITY,
-	TituloTipoUsuario VARCHAR(20) UNIQUE NOT NULL
+	TituloTipoUsuario VARCHAR(18) UNIQUE NOT NULL
 );
 GO
+
 
 CREATE TABLE Especialidade(
 	IdEspecialidade INT PRIMARY KEY IDENTITY,
@@ -41,12 +41,12 @@ CREATE TABLE Especialidade(
 );
 GO
 
---Criando tabela de Usuarios
+
 CREATE TABLE Usuario(
 	IdUsuario INT PRIMARY KEY IDENTITY,
 	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario),
-	Email VARCHAR(260) UNIQUE NOT NULL,
-	Senha VARCHAR(20) NOT NULL
+	Email VARCHAR(256) UNIQUE NOT NULL,
+	Senha VARCHAR(16) NOT NULL
 );
 GO
 
@@ -55,9 +55,9 @@ CREATE TABLE Paciente(
 	IdPaciente INT PRIMARY KEY IDENTITY,
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
 	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco),
-	NomePaciente VARCHAR(30) NOT NULL,
+	NomePaciente VARCHAR(20) NOT NULL,
 	DataNascimento DATE NOT NULL,
-	Telefone VARCHAR(14),
+	Telefone VARCHAR(14) UNIQUE,
 	RG CHAR(9) UNIQUE NOT NULL,
 	CPF CHAR(11) UNIQUE NOT NULL
 );
@@ -89,6 +89,17 @@ CREATE TABLE Consulta(
 	IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico),
 	IdSituacao INT FOREIGN KEY REFERENCES Situacao(IdSituacao) DEFAULT(1),
 	DataConsulta SMALLDATETIME NOT NULL,
-	DescricaoConsulta VARCHAR(500) DEFAULT(' ')
+	DescricaoConsulta VARCHAR(400) DEFAULT(' ')
+);
+GO
+
+
+CREATE TABLE ImagemUsuario(
+	IdImagemUsuario INT PRIMARY KEY IDENTITY(1,1),
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL UNIQUE,
+	Binario VARBINARY(MAX) NOT NULL,
+	MimeType VARCHAR(80) NOT NULL,
+	NomeArquivo VARCHAR(250) NOT NULL,
+	DataInclusao DATETIME DEFAULT GETDATE() NOt NULL
 );
 GO
