@@ -1,0 +1,27 @@
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background-image: url("./covid.png");
+    background-size: cover;
+}
+
+.login{
+    padding: 0 90px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
