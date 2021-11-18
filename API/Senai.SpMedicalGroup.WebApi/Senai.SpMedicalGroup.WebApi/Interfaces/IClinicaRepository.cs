@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace senai_spmed_webAPI.Interfaces
+namespace Senai.SpMedicalGroup.WebApi.Interfaces
 {
     interface IClinicaRepository
     {
