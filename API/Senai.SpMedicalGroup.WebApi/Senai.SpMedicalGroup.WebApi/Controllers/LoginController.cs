@@ -52,14 +52,14 @@ namespace Senai.SpMedicalGroup.WebApi.Controllers
                     new Claim("role", UsuarioBuscado.IdTipoUsuario.ToString())
                 };
 
-                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmg-chave-autenticacao"));
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmedicalgroup-chave-autenticacao"));
 
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                 var meuToken = new JwtSecurityToken(
 
-                    issuer:   "spmed.webAPI",
-                    audience: "spmed.webAPI",
+                    issuer: "Senai.SpMedicalGroup.WebAPI",
+                    audience: "Senai.SpMedicalGroup.WebAPI",
                     claims: minhasClaims,
                     expires: DateTime.Now.AddMinutes(30),
                     signingCredentials: creds

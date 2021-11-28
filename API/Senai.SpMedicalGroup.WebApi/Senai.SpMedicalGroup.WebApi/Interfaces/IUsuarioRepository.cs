@@ -21,5 +21,15 @@ namespace Senai.SpMedicalGroup.WebApi.Interfaces
         void SalvarPerfilDir(IFormFile foto, int idUsuario);
 
         string ConsultarPerfilDir(int idUsuario);
+
+        public List<Usuario> ListarTodos();
+
+        public Usuario BuscarPorId(int idUsuario);
+
+        public void Cadastrar(Usuario novousuario);
+
+        public void Atualizar(int idUsuario, Usuario usuarioAtualizado);
+
+        public void Deletar(int idUsuario);
     }
 }
