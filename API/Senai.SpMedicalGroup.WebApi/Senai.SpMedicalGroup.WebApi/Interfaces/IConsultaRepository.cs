@@ -43,13 +43,6 @@ namespace Senai.SpMedicalGroup.WebApi.Interfaces
         /// <param name="idConsulta">id da consulta a ser excluida</param>
         void Deletar(int idConsulta);
 
-        /// <summary>
-        /// Lista todos os eventos de um determinado usuário
-        /// </summary>
-        /// <param name="idUsuario">Id do usuário que participa dos eventos</param>
-        /// <returns>Uma lista de presenças com os dados dos eventos</returns>
-        List<Consulta> ListarMinhas(int idUsuario);
-
         
         /// <summary>
         /// Adiciona descrição a uma consulta existente
@@ -63,6 +56,6 @@ namespace Senai.SpMedicalGroup.WebApi.Interfaces
         /// </summary>
         /// <param name="idConsulta">id da consulta a ser cancelada</param>
         /// <param name="status">status da consulta</param>
-        void Cancela(int idConsulta, string status);
+        void Cancelar(int idConsulta, string status);
     }
 }

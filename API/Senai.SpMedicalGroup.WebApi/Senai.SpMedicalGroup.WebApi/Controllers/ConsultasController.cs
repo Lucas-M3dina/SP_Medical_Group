@@ -42,28 +42,8 @@ namespace senai_spmed_webAPI.Controllers
             }
         }
 
-        /// <summary>
-        /// Lista as consultas a um usuário, sendo este um paciente ou médico
-        /// </summary>
-        /// <returns>Uma lista de consultas associadas</returns>
-        [Authorize(Roles ="2,3")]
-        [HttpGet("minhas")]
-        public IActionResult ListarMinhas()
-        {
-            try
-            {
-                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-
-                return Ok(_consultaRepository.ListarMinhas(idUsuario));
-            }
-            catch (Exception erro)
-            {
-                return BadRequest(new
-                {
-                    erro
-                });
-            }
-        }
+        
+        
 
         /// <summary>
         /// Busca uma consulta pelo id
@@ -120,11 +100,11 @@ namespace senai_spmed_webAPI.Controllers
         /// <returns>Status code 204 no content</returns>
         [Authorize(Roles ="1")]
         [HttpPatch("{idConsulta}")]
-        public IActionResult Cancela(int idConsulta, Consulta status)
+        public IActionResult Cancelar(int idConsulta, Consulta status)
         {
             try
             {
-                _consultaRepository.Cancela(idConsulta, status.IdSituacao.ToString());
+                _consultaRepository.Cancelar(idConsulta, status.IdSituacao.ToString());
 
                 return StatusCode(204);
             }
