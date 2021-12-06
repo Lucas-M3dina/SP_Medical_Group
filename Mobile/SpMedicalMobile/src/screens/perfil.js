@@ -113,7 +113,7 @@ export default class Perfil extends Component {
           <TouchableOpacity
             style={styles.btnLogout}
             onPress={this.realizarLogout}>
-            <Text style={styles.btnLogoutText}>sair</Text>
+            <Text style={styles.btnLogoutText}>SAIR</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -134,7 +134,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mainHeaderRow: {
+    width: 130,
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   // imagem do cabeçalho
   mainHeaderImg: {
@@ -195,6 +198,6 @@ const styles = StyleSheet.create({
   btnLogoutText: {
     fontSize: 16,
     fontFamily: 'Open Sans',
-    color: '#B727FF',
+    color: '#2A7879',
   },
 });

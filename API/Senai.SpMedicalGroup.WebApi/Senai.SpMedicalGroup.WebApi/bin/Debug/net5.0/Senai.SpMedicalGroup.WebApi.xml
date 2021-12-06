@@ -81,6 +81,41 @@
             <param name="idPaciente">Id do paciente a ser buscado</param>
             <returns>Status code 204 no content</returns>
         </member>
+        <member name="M:Senai.SpMedicalGroup.WebApi.Controllers.UsuariosController.ListarTodos">
+            <summary>
+            Lista todos os usuarios
+            </summary>
+            <returns>uma lista de usuarios</returns>
+        </member>
+        <member name="M:Senai.SpMedicalGroup.WebApi.Controllers.UsuariosController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma usuario pelo id
+            </summary>
+            <param name="idUsuario">id da usuario a ser procurada</param>
+            <returns>Uma usuario</returns>
+        </member>
+        <member name="M:Senai.SpMedicalGroup.WebApi.Controllers.UsuariosController.Cadastrar(Senai.SpMedicalGroup.WebApi.Domains.Usuario)">
+            <summary>
+            Cadastra uma nova usuario
+            </summary>
+            <param name="novoUsuario">Objeto usuario com os atributos a serem cadastrados</param>
+            <returns>Status code 201 created</returns>
+        </member>
+        <member name="M:Senai.SpMedicalGroup.WebApi.Controllers.UsuariosController.Atualizar(System.Int32,Senai.SpMedicalGroup.WebApi.Domains.Usuario)">
+            <summary>
+            Atualiza uma usuario
+            </summary>
+            <param name="idUsuario">Id da usuario a ser buscada</param>
+            <param name="usuarioAtualizado">Objeto com atributos a serem inseridos</param>
+            <returns>Status code 204 no content</returns>
+        </member>
+        <member name="M:Senai.SpMedicalGroup.WebApi.Controllers.UsuariosController.Deletar(System.Int32)">
+            <summary>
+            Exclui uma usuario
+            </summary>
+            <param name="idUsuario">Id da usuario a ser buscada</param>
+            <returns>Status code 204 no content</returns>
+        </member>
         <member name="M:Senai.SpMedicalGroup.WebApi.Interfaces.IClinicaRepository.ListarTodos">
             <summary>
             Lista todas as clinicas
@@ -150,13 +185,6 @@
             </summary>
             <param name="idConsulta">id da consulta a ser excluida</param>
         </member>
-        <member name="M:Senai.SpMedicalGroup.WebApi.Interfaces.IConsultaRepository.ListarMinhas(System.Int32)">
-            <summary>
-            Lista todos os eventos de um determinado usuário
-            </summary>
-            <param name="idUsuario">Id do usuário que participa dos eventos</param>
-            <returns>Uma lista de presenças com os dados dos eventos</returns>
-        </member>
         <member name="M:Senai.SpMedicalGroup.WebApi.Interfaces.IConsultaRepository.AdicionarDecrição(System.Int32,Senai.SpMedicalGroup.WebApi.Domains.Consulta)">
             <summary>
             Adiciona descrição a uma consulta existente
@@ -164,7 +192,7 @@
             <param name="idConsulta">id da consulta a ter a descrição atualizada</param>
             <param name="ConsultaComDescricao">objeto com atributo descrição</param>
         </member>
-        <member name="M:Senai.SpMedicalGroup.WebApi.Interfaces.IConsultaRepository.Cancela(System.Int32,System.String)">
+        <member name="M:Senai.SpMedicalGroup.WebApi.Interfaces.IConsultaRepository.Cancelar(System.Int32,System.String)">
             <summary>
             Cancela uma consulta
             </summary>
@@ -284,12 +312,6 @@
             </summary>
             <returns>Uma lista de consultas</returns>
         </member>
-        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.ListarMinhas">
-            <summary>
-            Lista as consultas a um usuário, sendo este um paciente ou médico
-            </summary>
-            <returns>Uma lista de consultas associadas</returns>
-        </member>
         <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.BuscarPorId(System.Int32)">
             <summary>
             Busca uma consulta pelo id
@@ -304,7 +326,7 @@
             <param name="novaConsulta">Objeto com atributos a serem inseridos</param>
             <returns>status code 201 created</returns>
         </member>
-        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Cancela(System.Int32,Senai.SpMedicalGroup.WebApi.Domains.Consulta)">
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Cancelar(System.Int32,Senai.SpMedicalGroup.WebApi.Domains.Consulta)">
             <summary>
             Cancela ou muda a situaçao de uma consulta
             </summary>

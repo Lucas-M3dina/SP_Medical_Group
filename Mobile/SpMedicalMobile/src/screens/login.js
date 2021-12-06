@@ -18,7 +18,7 @@ export default class Login extends Component {
     super(props);
     this.state = {
       email: 'lucas@gmail.com',
-      senha: '123',
+      senha: '1234',
     };
   }
   //como vamos trabalhar com assync historage,
