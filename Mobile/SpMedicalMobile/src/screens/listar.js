@@ -2,76 +2,71 @@ import React, {Component} from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 
 import api from '../services/api';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default class Eventos extends Component {
+import {TouchableOpacity} from 'react-native-gesture-handler';
+
+export default class Convites extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listaEventos: [],
+      listaMinhasConsultas: [],
     };
   }
-  inscrever = async idevento => {
+
+  // define a função que faz a chamada para a API e traz as consultas
+  buscarMinhasConsultas = async () => {
     try {
       const token = await AsyncStorage.getItem('userToken');
 
-      console.warn(idevento);
-
-      await api.post(
-        '/presencas/inscricao/' + idevento,
-        {},
-        {
-          headers: {
-            Authorization: 'Bearer ' + token,
-          },
+      const resposta = await api.get('/consultas/minhas', {
+        headers: {
+          Authorization: 'Bearer ' + token,
         },
-      );
+      });
+
+      if (resposta.status === 200) {
+        const dadosDaApi = resposta.data;
+        this.setState({listaMinhasConsultas: dadosDaApi});
+      }
     } catch (error) {
       console.warn(error);
     }
   };
 
-  // define a função que faz a chamada para a API e traz os eventos
-  buscarEventos = async () => {
-    // define uma constante pra receber a resposta da requisição
-    const resposta = await api.get('/eventos');
-    // com a função console.warn() é possível mostrar alertas na tela do dispositivo mobile
-    // console.warn(resposta.data[0])
-    // recebe o corpo da resposta
-    const dadosDaApi = resposta.data;
-    // atualiza o state listaEventos com este corpo da requisição
-    this.setState({listaEventos: dadosDaApi});
-  };
-
-  // quando o componente é renderizado
   componentDidMount() {
-    // invoca a função abaixo
-    this.buscarEventos();
+    
+    this.buscarMinhasConsultas();
   }
 
   render() {
     return (
       <View style={styles.main}>
         {/* Cabeçalho - Header */}
+        
         <View style={styles.mainHeader}>
           <View style={styles.mainHeaderRow}>
-            <Image
-              source={require('../../assets/img/calendar.png')}
-              style={styles.mainHeaderImg}
-            />
-            <Text style={styles.mainHeaderText}>{'Eventos'.toUpperCase()}</Text>
+
+            <Text style={styles.mainHeaderText}>
+              {'Minhas Consultas'.toUpperCase()}
+            </Text>
           </View>
           <View style={styles.mainHeaderLine} />
         </View>
 
         {/* Corpo - Body */}
         <View style={styles.mainBody}>
+          <TouchableOpacity
+            onPress={this.buscarMinhasConsultas}
+            style={{alignItems: 'center'}}>
+            <Text style={(styles.attConsultas)}>
+              Atualizar Convites
+            </Text>
+          </TouchableOpacity>
           <FlatList
             contentContainerStyle={styles.mainBodyContent}
-            data={this.state.listaEventos}
-            keyExtractor={item => item.idEvento}
+            data={this.state.listaMinhasConsultas}
+            keyExtractor={item => item.idConsulta}
             renderItem={this.renderItem}
           />
         </View>
@@ -80,30 +75,34 @@ export default class Eventos extends Component {
   }
 
   renderItem = ({item}) => (
-    // <Text style={{ fontSize: 20, color: 'red' }}>{item.nomeEvento}</Text>
-
     <View style={styles.flatItemRow}>
       <View style={styles.flatItemContainer}>
-        <Text style={styles.flatItemTitle}>{item.nomeEvento}</Text>
-        <Text style={styles.flatItemInfo}>{item.descricao}</Text>
-
+        <Text style={styles.flatItemTitle}>
+          {'Medico: ' + item.idMedicoNavigation.nomeMedico + ' ' + item.idMedicoNavigation.sobrenomeMedico}
+        </Text>
         <Text style={styles.flatItemInfo}>
-          {Intl.DateTimeFormat("pt-BR", {
+          {'Descrição: ' + item.descricaoConsulta}
+        </Text>
+        <Text style={styles.flatItemInfo}>
+          {'Data: ' + Intl.DateTimeFormat("pt-BR", {
                                 year: 'numeric', month: 'numeric', day: 'numeric',
                                 hour: 'numeric', minute: 'numeric',
                                 hour12: true                                                
-                            }).format(new Date(item.dataEvento))}
+                            }).format(new Date(item.dataConsulta))}
+        </Text>
+        <Text style={styles.flatItemInfo}>
+          {'Situação: ' + item.idSituacaoNavigation.situacao1}
         </Text>
       </View>
       <View style={styles.flatItemImg}>
-        <TouchableOpacity
-          onPress={() => this.inscrever(item.idEvento)}
-          style={styles.flatItemImg}>
-          <Image
-            source={require('../../assets/img/view.png')}
-            style={styles.flatItemImgIcon}
-          />
-        </TouchableOpacity>
+        <Image
+          source={
+            item.idSituacao === 1
+              ? require('../../assets/img/check-symbol.png')
+              : require('../../assets/img/no-check-symbol.png')
+          }
+          style={styles.flatItemImgIcon}
+        />
       </View>
     </View>
   );
@@ -181,6 +180,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
+  attConsultas:{
+    color: '#ffff',
+    backgroundColor: '#69999A',
+    padding: 9,
+    borderRadius: 10,
+  },
   flatItemInfo: {
     fontSize: 12,
     color: '#999',
@@ -190,8 +195,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   flatItemImgIcon: {
-    width: 26,
-    height: 26,
-    tintColor: '#B727FF',
+    width: 16,
+    height: 16,
+    //tintColor: '#B727FF',
   },
 });

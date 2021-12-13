@@ -126,5 +126,49 @@ namespace Senai.SpMedicalGroup.WebApi.Repositories
                     }
                 }).ToList();
         }
+
+        public List<Consulta> Minhas(int idUsuario)
+        {
+            return ctx.Consulta
+                .Select(c => new Consulta
+                {
+                    IdConsulta = c.IdConsulta,
+                    DataConsulta = c.DataConsulta,
+                    DescricaoConsulta = c.DescricaoConsulta,
+                    IdPacienteNavigation = new Paciente
+                    {
+                        NomePaciente = c.IdPacienteNavigation.NomePaciente,
+                        DataNascimento = c.IdPacienteNavigation.DataNascimento,
+                        Telefone = c.IdPacienteNavigation.Telefone,
+                        Rg = c.IdPacienteNavigation.Rg,
+                        Cpf = c.IdPacienteNavigation.Cpf,
+
+                        IdUsuarioNavigation = new Usuario
+                        {
+                            IdUsuario = c.IdPacienteNavigation.IdUsuarioNavigation.IdUsuario
+                        }
+                    },
+                    IdMedicoNavigation = new Medico
+                    {
+                        NomeMedico = c.IdMedicoNavigation.NomeMedico,
+                        SobrenomeMedico = c.IdMedicoNavigation.SobrenomeMedico,
+                        Crm = c.IdMedicoNavigation.Crm,
+                        IdEspecialidadeNavigation = new Especialidade
+                        {
+                            TituloEspecialidade = c.IdMedicoNavigation.IdEspecialidadeNavigation.TituloEspecialidade
+                        },
+
+                        IdUsuarioNavigation = new Usuario
+                        {
+                            IdUsuario = c.IdMedicoNavigation.IdUsuarioNavigation.IdUsuario
+                        }
+                    },
+                    IdSituacaoNavigation = new Situacao
+                    {
+                        Situacao1 = c.IdSituacaoNavigation.Situacao1
+                    }
+                })
+                .Where(c => c.IdPacienteNavigation.IdUsuarioNavigation.IdUsuario == idUsuario || c.IdMedicoNavigation.IdUsuarioNavigation.IdUsuario == idUsuario).ToList();
+        }
     }
 }

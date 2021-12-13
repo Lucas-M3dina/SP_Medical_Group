@@ -25,6 +25,26 @@ namespace senai_spmed_webAPI.Controllers
         }
 
         /// <summary>
+        /// Lista as consultas a um usuário, sendo este um paciente ou médico
+        /// </summary>
+        /// <returns>Uma lista de consultas associadas</returns>
+        [Authorize(Roles = "2,3")]
+        [HttpGet("minhas")]
+        public IActionResult ListarMinhas()
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                return Ok(_consultaRepository.Minhas(idUsuario));
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        /// <summary>
         /// Lista todas as consultas existentes
         /// </summary>
         /// <returns>Uma lista de consultas</returns>

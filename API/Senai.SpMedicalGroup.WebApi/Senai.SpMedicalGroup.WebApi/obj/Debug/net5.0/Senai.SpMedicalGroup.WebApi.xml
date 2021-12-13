@@ -306,6 +306,12 @@
             <param name="idClinica">Id da clinica a ser buscada</param>
             <returns>Status code 204 no content</returns>
         </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.ListarMinhas">
+            <summary>
+            Lista as consultas a um usuário, sendo este um paciente ou médico
+            </summary>
+            <returns>Uma lista de consultas associadas</returns>
+        </member>
         <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.ListarTodas">
             <summary>
             Lista todas as consultas existentes

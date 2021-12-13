@@ -17,22 +17,18 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'lucas@gmail.com',
-      senha: '1234',
+      email: 'ligia@gmail.com',
+      senha: '1987029',
     };
   }
-  //como vamos trabalhar com assync historage,
-  //nossa funcao tem que ser async.
+  
   realizarLogin = async () => {
-    //nao temos mais  console log.
-    //vamos utilizar console.warn.
-
-    //apenas para teste.
+    
     console.warn(this.state.email + ' ' + this.state.senha);
 
     const resposta = await api.post('/Login', {
-      email: this.state.email, //ADM@ADM.COM
-      senha: this.state.senha, //senha123
+      email: this.state.email, 
+      senha: this.state.senha, 
     }).catch((error)=>{
       console.log("Api call error");
       alert(error.message);
@@ -99,7 +95,7 @@ const styles = StyleSheet.create({
   //antes da main
   overlay: {
     ...StyleSheet.absoluteFillObject, //todas as prop do styleShhet, e vamos aplica o abosluteFIL...
-    backgroundColor: 'rgba(99, 115, 148, 0.62)', //rgba pq vamos trabalhar com transparencia.
+    backgroundColor: 'rgba(0, 0, 0, 0.45)', //rgba pq vamos trabalhar com transparencia.
   },
 
   // conteúdo da main

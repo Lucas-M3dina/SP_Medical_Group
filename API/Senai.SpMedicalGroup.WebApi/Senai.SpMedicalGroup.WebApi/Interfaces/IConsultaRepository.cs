@@ -57,5 +57,7 @@ namespace Senai.SpMedicalGroup.WebApi.Interfaces
         /// <param name="idConsulta">id da consulta a ser cancelada</param>
         /// <param name="status">status da consulta</param>
         void Cancelar(int idConsulta, string status);
+
+        public List<Consulta> Minhas(int idUsuario);
     }
 }

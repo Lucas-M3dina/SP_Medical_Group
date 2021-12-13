@@ -2,74 +2,71 @@ import React, {Component} from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 
 import api from '../services/api';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-export default class Convites extends Component {
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+export default class Eventos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listaMeusEventos: [],
+      listaEventos: [],
     };
   }
-
-  // define a função que faz a chamada para a API e traz os eventos
-  buscarMeusEventos = async () => {
+  inscrever = async idevento => {
     try {
       const token = await AsyncStorage.getItem('userToken');
 
-      const resposta = await api.get('/Presencas/minhas', {
-        headers: {
-          Authorization: 'Bearer ' + token,
-        },
-      });
+      console.warn(idevento);
 
-      if (resposta.status === 200) {
-        const dadosDaApi = resposta.data;
-        this.setState({listaMeusEventos: dadosDaApi});
-      }
+      await api.post(
+        '/presencas/inscricao/' + idevento,
+        {},
+        {
+          headers: {
+            Authorization: 'Bearer ' + token,
+          },
+        },
+      );
     } catch (error) {
       console.warn(error);
     }
   };
 
+  // define a função que faz a chamada para a API e traz os eventos
+  buscarEventos = async () => {
+    // define uma constante pra receber a resposta da requisição
+    const resposta = await api.get('/eventos');
+    // com a função console.warn() é possível mostrar alertas na tela do dispositivo mobile
+    // console.warn(resposta.data[0])
+    // recebe o corpo da resposta
+    const dadosDaApi = resposta.data;
+    // atualiza o state listaEventos com este corpo da requisição
+    this.setState({listaEventos: dadosDaApi});
+  };
+
   // quando o componente é renderizado
   componentDidMount() {
     // invoca a função abaixo
-    this.buscarMeusEventos();
+    this.buscarEventos();
   }
 
   render() {
     return (
       <View style={styles.main}>
         {/* Cabeçalho - Header */}
-
         <View style={styles.mainHeader}>
           <View style={styles.mainHeaderRow}>
-            <Image
-              source={require('../../assets/img/calendar.png')}
-              style={styles.mainHeaderImg}
-            />
-            <Text style={styles.mainHeaderText}>
-              {'Convites'.toUpperCase()}
-            </Text>
+            <Text style={styles.mainHeaderText}>{'Consultas'.toUpperCase()}</Text>
           </View>
           <View style={styles.mainHeaderLine} />
         </View>
 
         {/* Corpo - Body */}
         <View style={styles.mainBody}>
-          <TouchableOpacity
-            onPress={this.buscarMeusEventos}
-            style={{alignItems: 'center'}}>
-            <Text style={(styles.flatItemTitle, {color: '#b727FF'})}>
-              Atualizar Convites
-            </Text>
-          </TouchableOpacity>
           <FlatList
             contentContainerStyle={styles.mainBodyContent}
-            data={this.state.listaMeusEventos}
+            data={this.state.listaEventos}
             keyExtractor={item => item.idEvento}
             renderItem={this.renderItem}
           />
@@ -79,34 +76,30 @@ export default class Convites extends Component {
   }
 
   renderItem = ({item}) => (
+    // <Text style={{ fontSize: 20, color: 'red' }}>{item.nomeEvento}</Text>
+
     <View style={styles.flatItemRow}>
       <View style={styles.flatItemContainer}>
-        <Text style={styles.flatItemTitle}>
-          {item.idEventoNavigation.nomeEvento}
-        </Text>
-        <Text style={styles.flatItemInfo}>
-          {item.idEventoNavigation.descricao}
-        </Text>
+        <Text style={styles.flatItemTitle}>{item.nomeEvento}</Text>
+        <Text style={styles.flatItemInfo}>{item.descricao}</Text>
+
         <Text style={styles.flatItemInfo}>
           {Intl.DateTimeFormat("pt-BR", {
                                 year: 'numeric', month: 'numeric', day: 'numeric',
                                 hour: 'numeric', minute: 'numeric',
                                 hour12: true                                                
-                            }).format(new Date(item.idEventoNavigation.dataEvento))}
-        </Text>
-        <Text style={styles.flatItemInfo}>
-          {item.idSituacaoNavigation.descricao}
+                            }).format(new Date(item.dataEvento))}
         </Text>
       </View>
       <View style={styles.flatItemImg}>
-        <Image
-          source={
-            item.idSituacao === 1
-              ? require('../../assets/img/check-symbol.png')
-              : require('../../assets/img/no-check-symbol.png')
-          }
-          style={styles.flatItemImgIcon}
-        />
+        <TouchableOpacity
+          onPress={() => this.inscrever(item.idEvento)}
+          style={styles.flatItemImg}>
+          <Image
+            source={require('../../assets/img/view.png')}
+            style={styles.flatItemImgIcon}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -137,14 +130,6 @@ const styles = StyleSheet.create({
   },
   mainHeaderRow: {
     flexDirection: 'row',
-  },
-  // imagem do cabeçalho
-  mainHeaderImg: {
-    width: 22,
-    height: 22,
-    tintColor: '#ccc',
-    marginRight: -5,
-    marginTop: -12,
   },
   // texto do cabeçalho
   mainHeaderText: {
@@ -193,8 +178,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   flatItemImgIcon: {
-    width: 16,
-    height: 16,
-    //tintColor: '#B727FF',
+    width: 26,
+    height: 26,
+    tintColor: '#B727FF',
   },
 });

@@ -10,8 +10,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const bottomTab = createBottomTabNavigator();
 
-import Convites from './convites';
-import Eventos from './eventos';
+import Convites from './listar';
+import Eventos from './cadastrarConsultas';
 import Perfil from './perfil';
 
 class Main extends Component {
@@ -26,17 +26,6 @@ class Main extends Component {
           <bottomTab.Navigator
             initialRouteName='Eventos'
 
-            // versão 5.x do React Navigation
-            // tabBarOptions={{
-            //   showLabel: false,
-            //   showIcon: true,
-            //   activeBackgroundColor: '#B727FF',
-            //   inactiveBackgroundColor: '#DD99FF',
-            //   activeTintColor: 'red',
-            //   inactiveTintColor: 'blue',
-            //   style: { height: 50 }
-            // }}
-            
             screenOptions={ ({ route }) => ({
               tabBarIcon: () => {
                 if (route.name === 'Convites') {
@@ -68,10 +57,9 @@ class Main extends Component {
               // React Navigation 6.x
               headerShown: false,
               tabBarShowLabel: false,
-              tabBarActiveBackgroundColor: '#B727FF',
-              tabBarInactiveBackgroundColor: '#DD99FF',
-              // tabBarActiveTintColor: 'blue',
-              // tabBarInactiveTintColor: 'red',
+              tabBarActiveBackgroundColor: '#2A7879',
+              tabBarInactiveBackgroundColor: '#69999A',
+
               tabBarStyle: { height: 50 }              
             }) }
           >
