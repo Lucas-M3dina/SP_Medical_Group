@@ -3,7 +3,9 @@ import axios from "axios";
 import Cabecalho from "../../components/cabecalho/cabecalho"
 import Rodape from "../../components/rodape/rodape"
 
-import "../../assets/css/consultas.css"
+import user from "../../assets/img/user.png"
+
+import "../../assets/css/paciente.css"
 
 export default function ConsultasPaciente() {
     const [listaConsultas, setListaConsultas] = useState([]);
@@ -18,8 +20,6 @@ export default function ConsultasPaciente() {
             .then(resposta => {
                 if (resposta.status === 200) {
                     setListaConsultas(resposta.data);
-                    // console.log(resposta.data)
-                    // console.log(listaConsultas)
                 }
             }).catch(erro => console.log(erro));
     }
@@ -44,73 +44,52 @@ export default function ConsultasPaciente() {
 
     return (
 
-        <div>
+        <>
             <Cabecalho />
-            <main>
-                <div className="container container_banner_consultas">
-                    <h1>Lista de consultas</h1>
-                </div>
-                <section className=" container listagem">
-                    <h2>Listagem</h2>
+            <main className="container-main">
+
+                <section className="banner">
+                    <div className="container-banner">
+                        <p className="texto-banner">A clinica SP Medical Group disponibiliza abaixo as consultas agendadas por você</p>
+                    </div>
+                </section>
 
                     {
                         listaConsultas.map((consulta) => {
+                            function verificaDescricao(desc) {
+                                if (consulta.descricaoConsulta === null || consulta.descricaoConsulta === undefined || consulta.descricaoConsulta === "") {
+                                    return "Nenhuma descrição adicionada pelo seu medico";
+                                }else{
+                                    return desc
+                                }
+                            }
                             // console.log(consulta.idSituacaoNavigation.situacao1)
                             return (
-                                <div key={consulta.idConsulta} className=" consulta">
-                                    <div className="informacoes_principais">
-                                        <div className="info_users">
-                                            <div className="info">
-                                                <p className="chave">Paciente:</p>
-                                                <p className="valor">{consulta.idPacienteNavigation.nomePaciente}</p>
-                                            </div>
-                                            <div className="info">
-                                                <p className="chave">Medico:</p>
-                                                <p className="valor">{consulta.idMedicoNavigation.nomeMedico} {consulta.idMedicoNavigation.sobrenomeMedico}</p>
-                                            </div>
-                                            <div className="info">
-                                                <p className="chave">Especialidade:</p>
-                                                <p className="valor">{consulta.idMedicoNavigation.idEspecialidadeNavigation.tituloEspecialidade}</p>
-                                            </div>
-                                        </div>
-                                        <div className="info_consulta">
-                                            <div className="situacao">
-                                                <div className=" info chave ">
-                                                    <button type="button" className="vazio"><i className="far fa-edit"></i></button>
-                                                </div>
-
-                                            </div>
-                                            <div className="info">
-                                                <p className="chave">Data da Consulta:</p>
-                                                <p className="valor">{Intl.DateTimeFormat("pt-BR", {
+                                <section key={consulta.id} class="cards">
+                                    <div class="card-borda">
+                                        <img class="user" src={user} alt="Foto Usuario"/>
+                                        <div class="textos-card">
+                                            <p class="dados"><span class="dados-titulo">Medico:</span> {consulta.idMedicoNavigation.nomeMedico + " " + consulta.idMedicoNavigation.sobrenomeMedico}</p>
+                                            <p class="dados"><span class="dados-titulo">Data:</span> {Intl.DateTimeFormat("pt-BR", {
                                                     year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric"
                                                 }).format(new Date(consulta.dataConsulta))}</p>
-                                            </div>
+                                            <p class="dados"><span class="dados-titulo">Descrição:</span> {verificaDescricao(consulta.descricaoConsulta)}</p>
+                                            <p class="dados"><span class="dados-titulo">Situação:</span> {consulta.idSituacaoNavigation.situacao1} </p>
+                                            
                                         </div>
                                     </div>
-                                    <hr />
-                                    <div className="informacoes_secundarias">
-                                        <p className="chave">Descricao da consulta</p>
-                                        <button onClick={() =>abrirDescricao(consulta.idConsulta)} type="button" className="vazio"></button>                                    </div>
-                                    <div className="descricao">
-                                        <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
-                                            cols="76" rows="3" readOnly>{consulta.descricaoConsulta}</textarea>
-                                    </div>
-                                </div>
+                                </section>
 
                             )
 
                         })
                     }
 
-
-                </section>
-
             </main>
 
             <Rodape />
 
 
-        </div>
+        </>
     )
 }

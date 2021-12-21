@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/adm.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <header>
+            <a href="#"> <img class="logo" src="./img/logo.png" alt="Logo"> </a>
+        </header>
+
+        <main class="container-main">
+
+            <section class="banner-adm">
+                <div class="container-banner">
+                    <p class="texto-banner">A clinica SP Medical Group disponibiliza abaixo suas consultas</p>
+                </div>
+            </section>
+
+            <section class="cadastrar-consulta">
+                <p class="titulo-section">CADASTRAR CONSULTA</p>
+                <form onSubmit={cadastrarConsultas} class="container-cadastrar-consulta">
+                    <label class="label-cadastro" for="paciente">Paciente:</label>
+                    <select class="input-cadastro" name="paciente" id="paciente" name="paciente" value="testeee">
+                        <option value="0" disabled>Selecione o paciente</option>
+                        <option key=1 value=1>testee</option>
+                    </select>
+                
+                    <label class="label-cadastro" for="medico">Medico:</label>
+                    <select class="input-cadastro" name="medico" id="medico" name="medico" value="testeee">
+                        <option value="0" disabled>Selecione o paciente</option>
+                        <option key=1 value=1>testee</option>
+                    </select>
+                
+                    <label class="label-cadastro" for="situacao">Situacao:</label>
+                    <select class="input-cadastro" name="situacao" id="situacao" name="email" value="testeee">
+                        <option value="0" disabled>Selecione o paciente</option>
+                        <option key=1 value=1>testee</option>
+                    </select>
+                
+                    <label class="label-cadastro" for="data">Data da consulta</label>
+                    <input class="input-cadastro" name="data" id="data" type="datetime-local">
+                
+                    <label class="label-cadastro" for="descricao">Descricao</label>
+                    <input class="input-cadastro" name="descricao" id="descricao" type="text">
+                            
+                    <button class="btn-cadastro">CADASTRAR</button>
+                </form>
+            </section>
+
+            <section class="cards">
+                <p class="titulo-section">LISTAGEM DE CONSULTAS</p>
+                <div class="card-borda">
+                    <img class="user" src="./img/user.png" alt="Foto Usuario">
+                    <div class="textos-card">
+                        <p class="dados"><span class="dados-titulo">Medico:</span> Lucas Santos Medina de Oliveira</p>
+                        <p class="dados"><span class="dados-titulo">Data:</span> 20/01/2021</p>
+                        <p class="dados"><span class="dados-titulo">Descrição:</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer-home">
+            <span class="footer-texto">Todos os direitos reservados  - SP Medical Group</span>
+        </footer>
+    </body>
+
+</html>

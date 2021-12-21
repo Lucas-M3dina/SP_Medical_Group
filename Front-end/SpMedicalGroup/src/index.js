@@ -59,8 +59,8 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Home} /> {/* Home */}
-        <Route path="/login" component={Login} />
+        <Route exact path="/" component={Login} /> {/* Home */}
+        <Route path="/home" component={Home} />
         <PermissaoAdm path="/consultasAdm" component={ConsultasAdm}/>
         <PermissaoAdm path="/analise" component={MapContainer}/>
         <PermissaoMedico path="/consultasMedico" component={ConsultasMedico} />

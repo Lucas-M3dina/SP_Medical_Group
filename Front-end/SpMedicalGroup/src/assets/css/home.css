@@ -34,11 +34,11 @@ header{
 }
 /* 
 font-family: Titillium Web; */
-.container-main{
+/* .container-main{
 
-}
+} */
 
-.banner{
+.banner-home{
     background-image: url(../img/banner.png);
     background-repeat: no-repeat;
     background-size: cover;

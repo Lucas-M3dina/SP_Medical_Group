@@ -9,19 +9,43 @@ import Porto from "../../assets/img/porto.png";
 import Unimed from "../../assets/img/unimed.png";
 import Cross from "../../assets/img/cross.png";
 import Bradesco from "../../assets/img/bradesco.png";
+import { parseJWT} from "../../services/auth";
 
 
 export default function Home() {
+
+    function jwtLink() {
+        var caminho = "";
+        switch (parseJWT().role) {
+            case "1":
+                caminho =  "/consultasAdm";
+                break;
+
+            case "2":
+                caminho = "/consultasMedico";
+                break;
+
+            case "3":
+                caminho = "/consultasPaciente";
+                break;
+        
+            default:
+                break;
+        }
+
+        return caminho
+    }
+
     return (
         <>
             <Cabecalho />
             
             <main className="container-main">
 
-                <section className="banner">
+                <section className="banner-home">
                     <div className="container-banner">
                         <p className="texto-banner">A clinica SP Medical Group tem a missão de cuidar dos pacientes a partir de um tratamento completo e humanizado.</p>
-                        <Link className="btn-consultas" to="/">Consultas</Link>
+                        <Link className="btn-consultas" to={jwtLink()}>Consultas</Link>
                     </div>
                 </section>
 
