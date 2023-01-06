@@ -19,5 +19,5 @@ aos dados sobre as informações de seus pacientes.</p>
 
 ## Tecnologias envolvidas 💻
 - React.js
-- .NET
+- .NET - API
 - SQL Server
