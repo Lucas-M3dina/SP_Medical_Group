@@ -1,6 +1,11 @@
 # <p align="center">👩‍⚕️ Projeto Senai - SP Medical Group 👨‍⚕</p>
+O SP Medical Group foi um projeto criado no Senai e consiste em uma aplicação de gestão para uma clinica médica
 
-<p align="center">   Uma nova clínica médica chamada SP Medical Group, empresa de pequeno porte que
+<br>
+
+## Historia 📖
+
+<p>   Uma nova clínica médica chamada SP Medical Group, empresa de pequeno porte que
 atua no ramo da saúde, foi criada pelo médico Fernando Strada em 2020 na região da
 Paulista em São Paulo. Fernando tem uma equipe de médicos que atuam em diversas
 áreas (pediatria, odontologia, gastrenterologia etc.).
@@ -12,3 +17,7 @@ onde seja possível realizar a gestão da clínica de forma automatizada e ter a
 aos dados sobre as informações de seus pacientes.</p>
 &nbsp;
 
+## Tecnologias envolvidas 💻
+- React.js
+- .NET
+- SQL Server
