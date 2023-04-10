@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Titillium+Web:wght@300;400;700&display=swap');
+
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+
+header{
+    height: 70px;
+    background-color: #3DB4B4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 50px;
+    height: 55px;
+}
+/* 
+font-family: Titillium Web; */
+.container-main{
+
+}
+
+.banner-adm{
+    background-image: url('../img/banner-adm.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 297px;
+    padding: 0 150px;
+}
+
+
+.texto-banner{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.btn-consultas{
+    background: #3DB4B4;
+    border-radius: 9px;
+    width: 7em;
+    padding: 0.3em;
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 45px;
+    text-align: center;
+    color: #FFFFFF;
+}
+ 
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 0;
+}
+
+.titulo-section{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 42px;
+    color: #3DB4B4;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.card-borda{
+    border: 8px solid #3DB4B4;
+    box-sizing: border-box;
+    border-radius: 35px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    height: 370px;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.user{
+    width: 210px;
+    height: 230px;
+}
+
+.textos-card {
+    width: 67%;
+}
+
+.dados{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 56px;
+    text-align: left;
+    color: #47abab;
+}
+
+
+
+.dados-titulo{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 56px;
+    text-align: center;
+    color: #47abab;
+}
+
+
+.container-cadastrar-consulta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-cadastro{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 56px;
+    text-align: center;
+    color: #47abab;
+}
+
+.btn-cadastro{
+    background: #3DB4B4;
+    border-radius: 9px;
+    width: 7em;
+    padding: 0.2em;
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 45px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+.input-cadastro{
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #3DB4B4;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 0.2em 4em;
+    text-align: center;
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 45px;
+    color: rgba(61, 180, 180, 0.68);
+}
+
+.input-cadastro::-webkit-input-placeholder{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 45px;
+    color: rgba(61, 180, 180, 0.68);
+}
+
+
+
+
+
+
+.footer-home{
+    height: 60px;
+    background-color: #3DB4B4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-texto{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 51px;
+    text-align: center;
+    color: #FFFFFF;
+}

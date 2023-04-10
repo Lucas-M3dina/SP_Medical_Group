@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Titillium+Web:wght@300;400;700&display=swap');
+
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+
+header{
+    height: 70px;
+    background-color: #3DB4B4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+}
+
+.text-header{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.logo{
+    width: 50px;
+    height: 55px;
+}
+/* 
+font-family: Titillium Web; */
+/* .container-main{
+
+} */
+
+.banner-home{
+    background-image: url(../img/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 297px;
+    padding: 0 150px;
+}
+
+
+.texto-banner{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.btn-consultas{
+    background: #3DB4B4;
+    border-radius: 9px;
+    width: 7em;
+    padding: 0.3em;
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 45px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.sobre{
+    padding: 50px 0;
+}
+
+.titulo-sobre{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 83px;
+    text-align: center;
+    color: #4f9f9f;
+    padding: 30px 0 50px 0;
+}
+
+.container-sobre{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+.card{
+    border: 6px solid #4a9797;
+    box-sizing: border-box;
+    border-radius: 24.4124px;
+    height: 390px;
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 19px;
+}
+
+.imagem-card{
+    width: 90px;
+}
+
+.imagem-card-bacteria{
+    width: 105px;
+}
+
+.texto-card{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 40px;
+    text-align: center;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.card-desce{
+    margin-top: 105px;
+}
+
+
+.nos{
+    background-image: url(../img/banner-sobre.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-nos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 850px;
+}
+
+.nos-titulo{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 68px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.nos-texto{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 52px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.patrocinadores{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+}
+
+
+.mapa{
+    background-image: url(../img/localizacao.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 70px;
+}
+
+.mapa-localizacao{
+    border: 4.30165px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 83px;
+    width: 950px;
+    height: 415px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mapa-titulo{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 68px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 5px 0 25px;
+}
+
+.mapa-endereco{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 49px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mapa-google{
+    border-radius: 0 83px 83px 0;
+    width: 600px; 
+    height: 415px;
+    border: 0;
+}
+
+
+
+.footer-home{
+    height: 60px;
+    background-color: #3DB4B4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-texto{
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 51px;
+    text-align: center;
+    color: #FFFFFF;
+}
