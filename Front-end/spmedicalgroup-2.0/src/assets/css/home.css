@@ -1,85 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Titillium+Web:wght@300;400;700&display=swap');
 
-*, 
-*:after,
-*:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-}
 
-
-header{
-    height: 70px;
-    background-color: #3DB4B4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 150px;
-}
-
-.text-header{
-    font-family: Titillium Web;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    color: #FFFFFF;
-}
-
-.logo{
-    width: 50px;
-    height: 55px;
-}
-/* 
-font-family: Titillium Web; */
-/* .container-main{
-
-} */
 
 .banner-home{
     background-image: url(../img/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 480px;
+    height: 780px;
+    
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .container-banner{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 297px;
     padding: 0 150px;
 }
 
-
-.texto-banner{
-    font-family: Titillium Web;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 42px;
-    color: #FFFFFF;
-    text-align: center;
+.container-consulta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
-.btn-consultas{
-    background: #3DB4B4;
-    border-radius: 9px;
-    width: 7em;
-    padding: 0.3em;
+
+.texto-banner{
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 600px;
+}
+
+.btn-consultas {
+    background: #417777;
+    border-radius: 4px;
     font-family: Titillium Web;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
-    line-height: 45px;
     text-align: center;
     color: #FFFFFF;
+    padding: 14px 41px;
+    margin-top: 30px;
 }
+
+.container-animacao{
+    background-image: url('../img/fundo-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .sobre{
     padding: 50px 0;

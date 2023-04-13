@@ -1,33 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Titillium+Web:wght@300;400;700&display=swap');
 
-*, 
-*:after,
-*:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-}
-
-
-header{
-    height: 70px;
-    background-color: #3DB4B4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo{
-    width: 50px;
-    height: 55px;
-}
-/* 
-font-family: Titillium Web; */
-.container-main{
-
-}
 
 .banner-adm{
     background-image: url('../img/banner-adm.png');
@@ -57,21 +29,6 @@ font-family: Titillium Web; */
     color: #FFFFFF;
     text-align: center;
 }
-
-.btn-consultas{
-    background: #3DB4B4;
-    border-radius: 9px;
-    width: 7em;
-    padding: 0.3em;
-    font-family: Titillium Web;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 45px;
-    text-align: center;
-    color: #FFFFFF;
-}
- 
 
 .cards{
     display: flex;

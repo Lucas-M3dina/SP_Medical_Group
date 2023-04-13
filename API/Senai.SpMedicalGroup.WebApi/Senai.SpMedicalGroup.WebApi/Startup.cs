@@ -57,6 +57,17 @@ namespace Senai.SpMedicalGroup.WebApi
                     ValidAudience = "Senai.SpMedicalGroup.WebAPI"
                 };
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorPolicy",
+                                builder => builder
+                                
+                                    .AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod()
+                                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +90,8 @@ namespace Senai.SpMedicalGroup.WebApi
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseCors("CorPolicy");
 
             app.UseEndpoints(endpoints =>
             {

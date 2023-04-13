@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Titillium+Web:wght@300;400;700&display=swap');
+
+*, 
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+}
+
+
+header{
+  height: 70px;
+  background-color: #417777;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 90px;
+}
+
+.container-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-header{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.text-header{
+  font-family: Titillium Web;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.text-header:hover{
+  border-bottom: #FFFFFF solid 3px;
+}
+
+.container-logo{
+  width: 55px;
+}
+
+.logo{
+  width: 50px;
+}
+
+.logo:hover{
+  width: 53px;
+}
+
+.container-user{
+  width: 60px;
+}
+.user-img{
+  width: 54px;
+}
+
+.user-img:hover{
+  width: 58px;
+  cursor: pointer;
+}
