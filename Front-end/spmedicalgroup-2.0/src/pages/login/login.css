@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Titillium+Web:wght@300;400;700&display=swap');
+
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+.login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-img{
+    background-image: url('../../assets/img/fundo-login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box-textos-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 65px 0;
+}
+
+.texto-banner-login {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    /* line-height: 37px; */
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 700px;
+}
+
+.btn-banner-login {
+    background: #417777;
+    border-radius: 6px;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 12px 40px;
+}
+
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+}
+
+.texto-informativo-login{
+    max-width: 540px;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 20px 0;
+    color: #C4C4C4;
+}
+
+.formulario-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+}
+
+.input-login {
+    border: 3px solid #417777;
+    border-radius: 6px;
+    width: 100%;
+    height: 45px;
+    margin: 10px 0;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(65, 119, 119, 0.68);
+    padding-left: 15px;
+}
+
+.btn-logar {
+    background: #417777;
+    border-radius: 6px;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 12px 60px;
+    margin-top: 47px;
+}

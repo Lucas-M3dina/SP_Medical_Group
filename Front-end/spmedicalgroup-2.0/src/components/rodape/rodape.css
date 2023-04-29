@@ -1,0 +1,17 @@
+footer {
+  height: 50px;
+  background-color: #4A8585;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer span{
+  font-family: Titillium Web;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 51px;
+  text-align: center;
+  color: #FFFFFF;
+}

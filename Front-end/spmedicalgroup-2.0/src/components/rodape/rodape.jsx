@@ -1,9 +1,10 @@
 import React from 'react'
+import './rodape.css'
 
 export default function Rodape() {
     return (
-        <footer className="footer-home">
-            <span className="footer-texto">Todos os direitos reservados  - SP Medical Group</span>
+        <footer>
+            <span>Todos os direitos reservados  - SP Medical Group</span>
         </footer>
     )
 }

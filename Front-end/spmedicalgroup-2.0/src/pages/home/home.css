@@ -3,7 +3,7 @@
 
 
 .banner-home{
-    background-image: url(../img/banner.png);
+    background-image: url(../../assets/img/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 780px;
@@ -56,7 +56,7 @@
 }
 
 .container-animacao{
-    background-image: url('../img/fundo-banner.png');
+    background-image: url('../../assets/img/fundo-banner.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
@@ -68,7 +68,7 @@
 
 
 .sobre{
-    padding: 50px 0;
+    padding: 100px 0 150px;
 }
 
 .titulo-sobre{
@@ -76,16 +76,17 @@
     font-style: normal;
     font-weight: 300;
     font-size: 42px;
-    line-height: 83px;
     text-align: center;
     color: #4f9f9f;
-    padding: 30px 0 50px 0;
+    padding: 20px 50px 70px;
 }
 
 .container-sobre{
     display: flex;
     justify-content: space-between;
     padding: 0 60px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .card{
@@ -125,10 +126,10 @@
 
 
 .nos{
-    background-image: url(../img/banner-sobre.png);
+    background-image: url(../../assets/img/banner-sobre.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 680px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,26 +138,33 @@
 
 .container-nos{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 850px;
+    max-width: 1600px;
 }
 
-.nos-titulo{
+.box-textos-nos{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nos-titulo {
     font-family: Titillium Web;
     font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 68px;
+    font-weight: 700;
+    font-size: 45px;
     text-align: center;
     color: #FFFFFF;
+    margin: 0 0 35px;
 }
 
 .nos-texto{
     font-family: Titillium Web;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 25px;
     line-height: 52px;
     text-align: center;
@@ -172,43 +180,52 @@
 
 
 .mapa{
-    background-image: url(../img/localizacao.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 0 70px;
+    padding: 150px;
 }
 
-.mapa-localizacao{
-    border: 4.30165px solid #FFFFFF;
+.mapa-localizacao {
     box-sizing: border-box;
     border-radius: 83px;
-    width: 950px;
-    height: 415px;
+    max-width: 1600px;
+    height: 515px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #4A8585;
+    padding: 4px;
+}
+
+.box-textos-localizacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
 }
 
 .mapa-titulo{
     font-family: Titillium Web;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     line-height: 68px;
     text-align: center;
     color: #FFFFFF;
-    margin: 5px 0 25px;
+    margin: 5px 0 35px;
 }
 
 .mapa-endereco{
     font-family: Titillium Web;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 25px;
     line-height: 49px;
     text-align: center;
     color: #FFFFFF;
@@ -217,26 +234,7 @@
 .mapa-google{
     border-radius: 0 83px 83px 0;
     width: 600px; 
-    height: 415px;
+    height: 100%;
     border: 0;
 }
 
-
-
-.footer-home{
-    height: 60px;
-    background-color: #3DB4B4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-texto{
-    font-family: Titillium Web;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 51px;
-    text-align: center;
-    color: #FFFFFF;
-}
