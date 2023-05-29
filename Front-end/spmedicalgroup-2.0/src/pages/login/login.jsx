@@ -57,7 +57,7 @@ export default function Login(){
     return(
         <main className="login">
             <div className="container-img">
-                <img src={LogoBanner} alt="Logo Banner"/>
+                <img className="logo-banner" src={LogoBanner} alt="Logo Banner"/>
                 <div className="box-textos-login">
                     <p className="texto-banner-login">Crie sua conta na plataforma da nossa clínica médica agora e tenha acesso a seus agendamentos e resultados de exames!</p>
                     <p className="texto-banner-login">Não perca mais tempo, crie sua conta agora e tenha mais controle sobre a sua saúde!</p>
@@ -66,7 +66,7 @@ export default function Login(){
             </div>
 
             <div className="container-form">
-                <img src={Logo} alt="Logo" />
+                <img className="logo-login" src={Logo} alt="Logo" />
                 <span className="texto-informativo-login">Se tiver uma conta basta preencher os dados de sua conta abaixo, caso o contrario cadastre uma conta.</span>
                 <form className="formulario-login" onSubmit={(e) => {EfetuaLogin(e)}}>
                     <input className="input-login" type="email" name="email" id="email" placeholder="Email" value={email} onChange={(e) => {setEmail(e.target.value)}}/>
